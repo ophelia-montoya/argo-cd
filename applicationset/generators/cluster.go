@@ -86,7 +86,7 @@ func (g *ClusterGenerator) GenerateParams(
 
 	clusterSecrets, err := g.getSecretsByClusterName(appSetGenerator)
 	if err != nil {
-		return nil, err
+		return nil, fmt.Errorf("error getting cluster secrets: %w", err)
 	}
 
 	res := []map[string]interface{}{}
